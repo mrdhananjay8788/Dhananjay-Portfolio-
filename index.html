@@ -1,48 +1,399 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dhananjay | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dhananjay Palekar - Premium Cybersecurity Portfolio & Web Developer">
+    <title>Dhananjay Palekar | Cybersecurity Portfolio</title>
+    
+    <!-- Fonts: JetBrains Mono, Poppins, Orbitron -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@400;500;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <div class="hero">
-      <img src="dhananjay.png" alt="Dhananjay Photo" class="profile-pic" />
-      <h1>Dhananjay</h1>
-      <p>Aspiring Web Developer</p>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Loading Screen -->
+    <div id="loader" class="loader-wrapper">
+        <div class="glitch-loader" data-text="SYSTEM_INIT...">SYSTEM_INIT...</div>
     </div>
-  </header>
 
-  <section class="about">
-    <h2>About Me</h2>
-    <p>I’m Dhananjay, a beginner web developer learning HTML, CSS, and JavaScript. I love building things and learning new tech!</p>
-  </section>
+    <!-- Matrix Background Canvas -->
+    <div id="matrix-canvas-container">
+        <canvas id="matrix-canvas"></canvas>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="navbar" data-aos="fade-down" data-aos-duration="1000">
+        <div class="logo">&lt;Dhananjay.P/&gt;</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#certificates">Certificates</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#github">GitHub</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </nav>
 
-  <section class="projects">
-    <h2>Projects</h2>
-    <p>Coming soon! 👷</p>
-  </section>
+    <!-- Home Section -->
+    <header class="hero" id="home">
+        <div class="container hero-container">
+            <div class="hero-content" data-aos="fade-right" data-aos-duration="1200">
+                <p class="prompt"><span class="typing-text"></span><span class="blinking-cursor">_</span></p>
+                <h1 class="glitch-title" data-text="Dhananjay Palekar">Dhananjay Palekar</h1>
+                <h2 class="hero-subtitle">Information Technology Student</h2>
+                <p class="hero-desc">Cybersecurity Enthusiast | PHP Developer | Web Developer | Ethical Hacking Learner</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn primary">View Projects</a>
+                    <a href="javascript:void(0)" class="btn secondary" onclick="alert('Resume file is not yet available.')">Download Resume <i class="fas fa-file-pdf"></i></a>
+                    <a href="#contact" class="btn primary">Contact Me</a>
+                    <a href="#contact" class="btn secondary outline">Hire Me</a>
+                </div>
+            </div>
+            <div class="hero-image-wrapper" data-aos="fade-left" data-aos-duration="1200">
+                <div class="hero-image-container">
+                    <div class="glowing-border"></div>
+                    <img src="images/photo.jpeg" alt="Dhananjay Palekar" class="hero-img">
+                </div>
+            </div>
+        </div>
+    </header>
 
-  <section class="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-    </ul>
-  </section>
+    <!-- About Section -->
+    <section id="about" class="about section-padding">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up"><span>01.</span> About Me</h2>
+            <div class="about-grid">
+                <div class="about-text" data-aos="fade-up" data-aos-delay="100">
+                    <p>I am a passionate <strong>Information Technology student</strong> with a strong interest in <span class="highlight-text">Cybersecurity</span>, <span class="highlight-text">Ethical Hacking</span>, <span class="highlight-text">Secure Web Development</span>, and <span class="highlight-text">Network Security</span>.</p>
+                    <p>I enjoy building practical software solutions that solve real-world problems while following secure coding practices. My primary goal is to become a professional cybersecurity engineer capable of protecting applications, networks, and digital infrastructure.</p>
+                    <p>Alongside cybersecurity, I have experience building full-stack PHP projects with MySQL and creating responsive modern websites. I possess a strong <span class="highlight-text">learning mindset</span>, continuously exploring new technologies and enjoying solving complex technical challenges.</p>
+                </div>
+                <div class="about-stats" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-card glass-card">
+                        <h3>Problem Solving</h3>
+                        <div class="progress-bar-container"><div class="progress-bar" data-width="90%"></div></div>
+                    </div>
+                    <div class="stat-card glass-card">
+                        <h3>Secure Coding</h3>
+                        <div class="progress-bar-container"><div class="progress-bar" data-width="85%"></div></div>
+                    </div>
+                    <div class="stat-card glass-card">
+                        <h3>Web Development</h3>
+                        <div class="progress-bar-container"><div class="progress-bar" data-width="95%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section class="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:youremail@example.com">dhananjaypalekar20@gmail.com</a></p>
-  </section>
+    <!-- Skills Section -->
+    <section id="skills" class="skills section-padding">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up"><span>02.</span> Technical Arsenal</h2>
+            <div class="skills-grid">
+                <!-- Skill Cards -->
+                <div class="skill-card glass-card" data-aos="zoom-in" data-aos-delay="50">
+                    <i class="fab fa-html5"></i> <span>HTML5</span>
+                </div>
+                <div class="skill-card glass-card" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fab fa-css3-alt"></i> <span>CSS3</span>
+                </div>
+                <div class="skill-card glass-card" data-aos="zoom-in" data-aos-delay="150">
+                    <i class="fab fa-js"></i> <span>JavaScript</span>
+                </div>
+                <div class="skill-card glass-card" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fab fa-php"></i> <span>PHP</span>
+                </div>
+                <div class="skill-card glass-card" data-aos="zoom-in" data-aos-delay="250">
+                    <i class="fas fa-database"></i> <span>MySQL</span>
+                </div>
+                <div class="skill-card glass-card" data-aos="zoom-in" data-aos-delay="300">
+                    <i class="fab fa-git-alt"></i> <span>Git</span>
+                </div>
+                <div class="skill-card glass-card" data-aos="zoom-in" data-aos-delay="350">
+                    <i class="fab fa-github"></i> <span>GitHub</span>
+                </div>
+                <div class="skill-card glass-card" data-aos="zoom-in" data-aos-delay="400">
+                    <i class="fas fa-mobile-alt"></i> <span>Responsive Design</span>
+                </div>
+                <div class="skill-card glass-card" data-aos="zoom-in" data-aos-delay="450">
+                    <i class="fas fa-shield-alt"></i> <span>Cybersecurity</span>
+                </div>
+                <div class="skill-card glass-card" data-aos="zoom-in" data-aos-delay="500">
+                    <i class="fab fa-linux"></i> <span>Linux</span>
+                </div>
+                <div class="skill-card glass-card" data-aos="zoom-in" data-aos-delay="550">
+                    <i class="fas fa-network-wired"></i> <span>Networking</span>
+                </div>
+                <div class="skill-card glass-card" data-aos="zoom-in" data-aos-delay="600">
+                    <i class="fas fa-lock"></i> <span>Secure Coding</span>
+                </div>
+                <div class="skill-card glass-card" data-aos="zoom-in" data-aos-delay="650">
+                    <i class="fas fa-server"></i> <span>Database Design</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <footer>
-    <p>&copy; 2025 Dhananjay</p>
-  </footer>
+    <!-- Projects Section -->
+    <section id="projects" class="projects section-padding">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up"><span>03.</span> Featured Operations</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card glass-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-header">
+                        <i class="fas fa-folder-open folder-icon"></i>
+                        <div class="project-links">
+                            <a href="https://github.com/mrdhananjay8788" target="_blank" aria-label="GitHub Link"><i class="fab fa-github"></i></a>
+                            <a href="javascript:void(0)" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Student Activity Assignment & Automated Marks System</h3>
+                    <p class="project-desc">Developed a web-based faculty and student portal using PHP and MySQL that automates activity assignment, submission tracking, deadline monitoring, and automatic marks calculation.</p>
+                    <ul class="project-features">
+                        <li>Faculty & Student Dashboards</li>
+                        <li>Approval Workflow & Deadline Automation</li>
+                        <li>Automatic Marks & Report Generation</li>
+                        <li>Role Based Login</li>
+                    </ul>
+                    <div class="project-tech-list">
+                        <span>PHP</span> <span>MySQL</span> <span>HTML/CSS/JS</span>
+                    </div>
+                </div>
 
-  <script src="script.js"></script>
+                <div class="project-card glass-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-header">
+                        <i class="fas fa-folder-open folder-icon"></i>
+                        <div class="project-links">
+                            <a href="https://github.com/mrdhananjay8788" target="_blank" aria-label="GitHub Link"><i class="fab fa-github"></i></a>
+                            <a href="javascript:void(0)" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Cybersecurity Portfolio Website</h3>
+                    <p class="project-desc">Personal responsive cybersecurity portfolio featuring a futuristic hacker UI, glassmorphism effects, responsive layout, and smooth high-performance animations.</p>
+                    <ul class="project-features">
+                        <li>AOS Scroll Animations</li>
+                        <li>Custom Matrix Canvas Background</li>
+                        <li>Premium Glassmorphism Design</li>
+                    </ul>
+                    <div class="project-tech-list">
+                        <span>HTML5</span> <span>CSS3 Variables</span> <span>Vanilla JS</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Experience Split Section -->
+    <section id="education-experience" class="edu-exp section-padding">
+        <div class="container">
+            <div class="split-grid">
+                <!-- Education -->
+                <div class="edu-column" id="education" data-aos="fade-right">
+                    <h2 class="section-title"><span>04.</span> Education</h2>
+                    <div class="timeline">
+                        <div class="timeline-item glass-card">
+                            <div class="timeline-dot"></div>
+                            <span class="timeline-date">Current</span>
+                            <h3>Bachelor of Technology</h3>
+                            <h4>Information Technology</h4>
+                            <p>Pursuing comprehensive studies in IT, focusing on software engineering, network security, and advanced computing principles.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Experience -->
+                <div class="exp-column" id="experience" data-aos="fade-left">
+                    <h2 class="section-title"><span>05.</span> Experience</h2>
+                    <div class="timeline">
+                        <div class="timeline-item glass-card">
+                            <div class="timeline-dot"></div>
+                            <span class="timeline-date">Coming Soon</span>
+                            <h3>Cybersecurity Intern</h3>
+                            <h4>Future Opportunities</h4>
+                            <p>Actively seeking internships and roles in Penetration Testing, SOC Analysis, and secure software development to apply my learning in real-world environments.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates & Achievements -->
+    <section id="cert-achieve" class="section-padding">
+        <div class="container">
+            <div class="split-grid">
+                <!-- Certificates -->
+                <div class="cert-column" id="certificates" data-aos="fade-up">
+                    <h2 class="section-title"><span>06.</span> Certificates</h2>
+                    <div class="cert-grid">
+                        <div class="cert-card glass-card">
+                            <i class="fas fa-certificate cert-icon"></i>
+                            <h3>Ethical Hacking Essentials</h3>
+                            <p>Placeholder for upcoming certification</p>
+                        </div>
+                        <div class="cert-card glass-card">
+                            <i class="fas fa-certificate cert-icon"></i>
+                            <h3>Web Security Fundamentals</h3>
+                            <p>Placeholder for upcoming certification</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievements -->
+                <div class="achieve-column" id="achievements" data-aos="fade-up" data-aos-delay="100">
+                    <h2 class="section-title"><span>07.</span> Achievements</h2>
+                    <div class="achieve-list glass-card">
+                        <ul>
+                            <li><i class="fas fa-trophy"></i> Built a complete Automated Marks System for faculty.</li>
+                            <li><i class="fas fa-trophy"></i> Continuously expanding knowledge in CTF challenges.</li>
+                            <li><i class="fas fa-trophy"></i> Designed and developed this premium portfolio.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services section-padding">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up"><span>08.</span> Services</h2>
+            <div class="services-grid">
+                <div class="service-card glass-card" data-aos="flip-left" data-aos-delay="100">
+                    <i class="fas fa-code"></i>
+                    <h3>Web Development</h3>
+                    <p>Building responsive, modern, and high-performance websites using cutting-edge frontend technologies.</p>
+                </div>
+                <div class="service-card glass-card" data-aos="flip-left" data-aos-delay="200">
+                    <i class="fab fa-php"></i>
+                    <h3>PHP Development</h3>
+                    <p>Creating robust server-side applications and dynamic portals tailored for complex business logic.</p>
+                </div>
+                <div class="service-card glass-card" data-aos="flip-left" data-aos-delay="300">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Responsive Websites</h3>
+                    <p>Ensuring seamless user experiences across all devices, from large desktop monitors to mobile phones.</p>
+                </div>
+                <div class="service-card glass-card" data-aos="flip-left" data-aos-delay="400">
+                    <i class="fas fa-database"></i>
+                    <h3>Database Design</h3>
+                    <p>Architecting secure and efficient MySQL databases for reliable data storage and fast retrieval.</p>
+                </div>
+                <div class="service-card glass-card" data-aos="flip-left" data-aos-delay="500">
+                    <i class="fas fa-user-shield"></i>
+                    <h3>Cybersecurity Learning</h3>
+                    <p>Applying ethical hacking methodologies and secure coding practices to harden web applications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GitHub Stats Section -->
+    <section id="github" class="github-stats section-padding">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up"><span>09.</span> GitHub Activity</h2>
+            <div class="github-content glass-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="github-header">
+                    <i class="fab fa-github gh-logo"></i>
+                    <h3>Open Source Contributions</h3>
+                    <a href="https://github.com/mrdhananjay8788" target="_blank" class="btn secondary btn-sm">View Profile</a>
+                </div>
+                <div class="gh-placeholder-grid">
+                    <div class="gh-repo glass-card">
+                        <a href="https://github.com/mrdhananjay8788/Faculty-dashboard" target="_blank" style="text-decoration:none;"><h4>Faculty-dashboard</h4></a>
+                        <p>PHP/MySQL Faculty Portal</p>
+                        <div class="gh-meta"><span><i class="fas fa-star"></i> 0</span> <span><i class="fas fa-code-branch"></i> PHP</span></div>
+                    </div>
+                    <div class="gh-repo glass-card">
+                        <a href="https://github.com/mrdhananjay8788/Dhananjay-Portfolio-" target="_blank" style="text-decoration:none;"><h4>Dhananjay-Portfolio-</h4></a>
+                        <p>Personal portfolio repository</p>
+                        <div class="gh-meta"><span><i class="fas fa-star"></i> 0</span> <span><i class="fas fa-code-branch"></i> Jupyter Notebook</span></div>
+                    </div>
+                </div>
+                <div class="gh-graph-placeholder">
+                    <p>[ GitHub Contribution Graph Placeholder ]</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section-padding">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up"><span>10.</span> Establish Connection</h2>
+            <div class="contact-grid">
+                <div class="contact-info glass-card" data-aos="fade-right">
+                    <h3>Get In Touch</h3>
+                    <p>I am actively seeking new opportunities, internships, and collaborations in the IT and Cybersecurity domain. My inbox is always open!</p>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-map-marker-alt"></i> India</li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:dhananjaypalekar20@gmail.com" style="color: inherit; text-decoration: none;">dhananjaypalekar20@gmail.com</a></li>
+                    </ul>
+                    <div class="social-links-large">
+                        <a href="https://github.com/mrdhananjay8788" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/dhananjay-palekar-991b40272" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/dhananjay_.p._?igsh=cG1jdzhxNG1ucmFw" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="javascript:void(0)" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <form class="contact-form glass-card" data-aos="fade-left" onsubmit="event.preventDefault(); alert('Message sent successfully! (Demo)');">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" placeholder="Message Data" required></textarea>
+                    </div>
+                    <button type="submit" class="btn primary full-width">Send Message <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Made with <i class="fas fa-heart heart-icon"></i> by <strong>Dhananjay Palekar</strong></p>
+            <p class="copyright">&copy; 2026 All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
 </body>
 </html>

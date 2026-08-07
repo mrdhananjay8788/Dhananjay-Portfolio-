@@ -68,7 +68,7 @@
                 <p class="hero-desc">Cybersecurity Enthusiast | PHP Developer | Web Developer | Ethical Hacking Learner</p>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn primary">View Projects</a>
-                    <a href="javascript:void(0)" class="btn secondary" onclick="alert('Resume file is not yet available.')">Download Resume <i class="fas fa-file-pdf"></i></a>
+                    <a href="javascript:void(0)" class="btn secondary" onclick="downloadResume()">Download Resume <i class="fas fa-file-pdf"></i></a>
                     <a href="#contact" class="btn primary">Contact Me</a>
                     <a href="#contact" class="btn secondary outline">Hire Me</a>
                 </div>
@@ -364,7 +364,8 @@
                     </div>
                 </div>
                 
-                <form class="contact-form glass-card" data-aos="fade-left" onsubmit="event.preventDefault(); alert('Message sent successfully! (Demo)');">
+                <form id="contact-form" class="contact-form glass-card" data-aos="fade-left">
+                    <input type="hidden" name="access_key" value="aae22b7b-5b14-4975-9fee-98f44be90941">
                     <div class="form-group">
                         <input type="text" id="name" name="name" placeholder="Name" required>
                     </div>
@@ -377,7 +378,8 @@
                     <div class="form-group">
                         <textarea id="message" name="message" rows="5" placeholder="Message Data" required></textarea>
                     </div>
-                    <button type="submit" class="btn primary full-width">Send Message <i class="fas fa-paper-plane"></i></button>
+                    <button type="submit" class="btn primary full-width" id="submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
+                    <p id="form-status" style="display: none; margin-top: 15px; font-weight: bold; text-align: center;"></p>
                 </form>
             </div>
         </div>
@@ -395,5 +397,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Custom JS -->
     <script src="js/script.js"></script>
+    <script src="js/resumeData.js"></script>
+    <script src="js/resume.js"></script>
 </body>
 </html>

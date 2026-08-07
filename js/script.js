@@ -216,3 +216,57 @@ window.addEventListener('load', () => {
 
 // Fallback: forcefully hide after 2 seconds even if resources are still loading
 setTimeout(hideLoader, 2000);
+
+// 9. Contact Form Submission Logic (Web3Forms)
+const contactForm = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
+const submitBtn = document.getElementById('submit-btn');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Show loading state
+        const originalBtnHtml = submitBtn.innerHTML;
+        submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
+        submitBtn.disabled = true;
+        
+        const formData = new FormData(contactForm);
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+        
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: json
+        })
+        .then(async (response) => {
+            let jsonRes = await response.json();
+            if (response.status == 200) {
+                formStatus.style.display = 'block';
+                formStatus.style.color = '#28a745';
+                formStatus.innerText = 'Message sent successfully!';
+                contactForm.reset();
+            } else {
+                formStatus.style.display = 'block';
+                formStatus.style.color = '#dc3545';
+                formStatus.innerText = jsonRes.message || 'Something went wrong!';
+            }
+        })
+        .catch(error => {
+            formStatus.style.display = 'block';
+            formStatus.style.color = '#dc3545';
+            formStatus.innerText = 'Something went wrong!';
+        })
+        .finally(() => {
+            submitBtn.innerHTML = originalBtnHtml;
+            submitBtn.disabled = false;
+            setTimeout(() => {
+                formStatus.style.display = 'none';
+            }, 5000);
+        });
+    });
+}
